@@ -11,20 +11,32 @@
         android:layout_width="330dp"
         android:layout_height="56dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="44dp"
-        android:text="Click to change"
+        android:layout_marginTop="88dp"
+        android:text="Create user"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name_field" />
+        app:layout_constraintTop_toBottomOf="@+id/username_field" />
 
     <EditText
-        android:id="@+id/name_field"
+        android:id="@+id/username_field"
         android:layout_width="326dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="28dp"
         android:ems="10"
-        android:hint="Enter your name"
+        android:hint="Username"
         android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/password_field"
+        android:layout_width="326dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="96dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>
