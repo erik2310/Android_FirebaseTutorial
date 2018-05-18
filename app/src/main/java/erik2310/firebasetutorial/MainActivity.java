@@ -1,5 +1,6 @@
 package erik2310.firebasetutorial;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     // Deklarer en Button variabel
     private Button mFirebase_button;
+    private Button mOpen_Retrieve_Data_button;
 
     // Deklarer en DatabaseReference variabel
     private DatabaseReference mDatabase;
@@ -34,6 +36,9 @@ public class MainActivity extends AppCompatActivity {
 
         // Sætter knappen med id firebase_button til mFirebase_button variabel
         mFirebase_button = (Button)findViewById(R.id.firebase_button);
+
+        // Sætter knappen med id open_retrieve_data_button til mOpen_Retrieve_Data_button variabel
+        mOpen_Retrieve_Data_button = (Button) findViewById(R.id.open_retrieve_data_button);
 
         // Sætter field med id username_field til mUsername_field
         mUsername_field = (EditText) findViewById(R.id.username_field);
@@ -74,6 +79,15 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
 
+            }
+        });
+
+        // Laver en OnClick event listener til mOpen_Retrieve_Data_button
+        mOpen_Retrieve_Data_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent openRetrieveData = new Intent(MainActivity.this, RetrieveDataActivity.class);
+                startActivity(openRetrieveData);
             }
         });
     }
