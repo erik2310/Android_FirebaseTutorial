@@ -7,11 +7,31 @@
     tools:context=".MainActivity">
 
     <Button
+        android:id="@+id/open_login_button"
+        android:layout_width="330dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="300dp"
+        android:text="Open Login UI"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/username_field" />
+
+    <Button
+        android:id="@+id/open_create_user_button"
+        android:layout_width="330dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="232dp"
+        android:text="Open Create User UI"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/username_field" />
+
+    <Button
         android:id="@+id/open_retrieve_data_button"
         android:layout_width="330dp"
         android:layout_height="56dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="164dp"
+        android:layout_marginTop="160dp"
         android:text="Open Retrieve Data"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/username_field" />

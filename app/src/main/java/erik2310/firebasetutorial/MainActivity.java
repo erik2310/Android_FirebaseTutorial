@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     // Deklarer en Button variabel
     private Button mFirebase_button;
     private Button mOpen_Retrieve_Data_button;
+    private Button mOpen_Create_User_button;
+    private Button mOpen_Login_button;
 
     // Deklarer en DatabaseReference variabel
     private DatabaseReference mDatabase;
@@ -39,6 +41,12 @@ public class MainActivity extends AppCompatActivity {
 
         // Sætter knappen med id open_retrieve_data_button til mOpen_Retrieve_Data_button variabel
         mOpen_Retrieve_Data_button = (Button) findViewById(R.id.open_retrieve_data_button);
+
+        // Sætter knappen med id open_login_button til mOpen_Create_User_button variabel
+        mOpen_Create_User_button = (Button) findViewById(R.id.open_create_user_button);
+
+        // Sætter knappen med id open_login_button til mOpen_Login_button variabel
+        mOpen_Login_button = (Button) findViewById(R.id.open_login_button);
 
         // Sætter field med id username_field til mUsername_field
         mUsername_field = (EditText) findViewById(R.id.username_field);
@@ -90,5 +98,24 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(openRetrieveData);
             }
         });
+
+        // Laver en OnClick event listener til mOpen_Create_User_button
+        mOpen_Create_User_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent openCreateUser = new Intent(MainActivity.this, OpretBrugerActivity.class);
+                startActivity(openCreateUser);
+            }
+        });
+
+        // Laver en OnClick event listener til mOpen_Login_button
+        mOpen_Login_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent openLogin = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(openLogin);
+            }
+        });
+
     }
 }

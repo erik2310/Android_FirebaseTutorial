@@ -16,7 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RetrieveDataActivity"></activity>
+        <activity android:name=".RetrieveDataActivity" />
+        <activity android:name=".OpretBrugerActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".CongratulationsActivity"></activity>
     </application>
 
 </manifest>
