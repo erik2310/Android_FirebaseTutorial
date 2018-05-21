@@ -12,6 +12,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class OpretBrugerActivity extends AppCompatActivity {
 
@@ -56,6 +57,13 @@ public class OpretBrugerActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null)
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+    }
+
     private void createAccount(String email, String password) {
 
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -63,6 +71,7 @@ public class OpretBrugerActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     Toast.makeText(OpretBrugerActivity.this, "Created user successfully!", Toast.LENGTH_LONG).show();
+                    FirebaseUser user = mAuth.getCurrentUser();
                 } else {
                     Toast.makeText(OpretBrugerActivity.this, "Create user failed!", Toast.LENGTH_LONG).show();
                 }
